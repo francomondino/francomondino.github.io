@@ -121,9 +121,9 @@
 				});
 
 				$('#sendmail').submit(function(event){
-					event.preventDefault;
+					event.preventDefault();
 					/* get some values from elements on the page: */
-                
+
                 /* Send the data using post */
                 var posting = $.post("mail.php", $(this).serialize());
 
@@ -133,6 +133,7 @@
                     //var content = $(data).find('#content');
                     //$("#result").empty().append(content);
                 });
+								return false;
 				})
 
 	});
