@@ -2,7 +2,10 @@
 
 
 
-
+$name = $_POST["name"];
+$email = $_POST["email"];
+$message = $_POST["message"];
+$from = $name .' <'.$email.'>'
 
 
 if ($name == NULL || $email == NULL || $message == NULL) {
