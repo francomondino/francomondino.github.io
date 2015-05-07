@@ -17,7 +17,7 @@ else {
   $to = 'mail@francomondino.it';
   $subject = 'Message sent from francomondino.it - '.$name.' wants to ask you something.';
 
-  //mail($to, $subject, $message, $headers);
+  mail($to, $subject, $message, $headers);
 
   echo "Thank you! Your message was sent. I'll get in touch as soon as possible.";
 }
