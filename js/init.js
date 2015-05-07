@@ -120,6 +120,21 @@
 					windowMargin: (skel.isActive('small') ? 0 : 50)
 				});
 
+				$('#sendmail').submit(function(event){
+					event.preventDefault;
+					/* get some values from elements on the page: */
+                
+                /* Send the data using post */
+                var posting = $.post("mail.php", $(this).serialize());
+
+                /* Put the results in a div */
+                posting.done(function(data) {
+									alert(data);
+                    //var content = $(data).find('#content');
+                    //$("#result").empty().append(content);
+                });
+				})
+
 	});
 
 })(jQuery);

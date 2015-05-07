@@ -14,10 +14,10 @@ if ($name == NULL || $email == NULL || $message == NULL) {
 else {
 
   $headers = $from;
-  $to = 'stefano.mondino.dev@gmail.com';
-  $subject = 'Francomondino.it - '.$name.' wants to ask you something.';
+  $to = 'mail@francomondino.it';
+  $subject = 'Message sent from francomondino.it - '.$name.' wants to ask you something.';
 
-  mail($to, $subject, $message, $headers);
+  //mail($to, $subject, $message, $headers);
 
   echo "Thank you! Your message was sent. I'll get in touch as soon as possible.";
 }
