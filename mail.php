@@ -5,7 +5,7 @@
 $name = $_POST["name"];
 $email = $_POST["email"];
 $message = $_POST["message"];
-$from = 'From: '$name .' <'.$email.'>';
+$from = 'From: '.$name .' <'.$email.'>';
 
 
 if ($name == NULL || $email == NULL || $message == NULL) {
