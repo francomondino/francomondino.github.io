@@ -15,7 +15,7 @@ else {
 
   $headers = $from;
   $to = 'stefano.mondino.dev@gmail.com';
-  $subject = 'Francomondino.it - '.$name.' wants to ask you something.'
+  $subject = 'Francomondino.it - '.$name.' wants to ask you something.';
 
   mail($to, $subject, $message, $headers);
 
