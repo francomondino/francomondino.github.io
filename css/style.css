@@ -942,7 +942,7 @@
 		left: 0;
 		padding: 8em 4em 0 0;
 		position: fixed;
-		text-align: right;
+		text-align: center;
 		top: 0;
 		width: 35%;
 	}
@@ -964,7 +964,7 @@
 
 		#header .image.avatar {
 			margin: 0 0 1em 0;
-			width: 6.25em;
+			width: 12.25em;
 		}
 
 /* Footer */
@@ -974,7 +974,7 @@
 		left: 0;
 		padding: 0 4em 6em 0;
 		position: fixed;
-		text-align: right;
+		text-align: center;
 		width: 35%;
 	}
 
