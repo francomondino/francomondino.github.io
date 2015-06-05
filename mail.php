@@ -14,8 +14,8 @@ if ($name == NULL || $email == NULL || $message == NULL) {
 else {
 
   $headers = $from;
-  $to = 'mail@francomondino.it';
-  $subject = 'Message sent from francomondino.it - '.$name.' wants to ask you something.';
+  $to = 'mail@francomondino.com';
+  $subject = 'Message sent from francomondino.com - '.$name.' wants to ask you something.';
 
   mail($to, $subject, $message, $headers);
 
