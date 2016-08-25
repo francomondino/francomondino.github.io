@@ -90,7 +90,7 @@ set(
 set :relative_links, true
 activate :blog do |blog|
   blog.paginate = true
-    blog.page_link = "camino/build/p{num}"
+    blog.page_link = "page/{num}"
     blog.per_page = 1
     blog.layout = "article"
 end
