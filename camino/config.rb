@@ -87,10 +87,10 @@ set(
   :lax_spacing                  => true,
   :renderer                     => RightScaleCustomMarkdown
 )
-
+set :relative_links, true
 activate :blog do |blog|
   blog.paginate = true
-    blog.page_link = "p{num}"
+    blog.page_link = "camino/build/p{num}"
     blog.per_page = 1
     blog.layout = "article"
 end
