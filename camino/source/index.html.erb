@@ -1,0 +1,49 @@
+---
+pageable: true
+per_page: 1
+---
+
+
+<% page_articles.each_with_index do |article, i| %>
+<!-- Post -->
+  <article class="post">
+    <header>
+      <div class="title">
+
+
+        <h2><%= link_to article.title, article %></h2>
+      </div>
+      <div class="meta">
+        <time class="published" datetime="2015-11-01"><%= I18n.localize(article.date, :format =>  "%-d %B %Y") %></time>
+        <a href="#" class="author"><span class="name">Franco Mondino</span><img src="http://francomondino.com/images/avatar.jpg" alt="" /></a>
+      </div>
+    </header>
+    <a href="#" class="image featured"><%= image_tag article.data.image %></a>
+    <%= article.summary(450) %>
+    <footer>
+      <ul class="actions">
+        <li><%= link_to "Leggi", article, :class => "button big" %></li>
+      </ul>
+
+    </footer>
+  </article>
+
+
+
+
+  <!-- use article.summary(250) if you have Nokogiri available to show just
+       the first 250 characters -->
+
+<% end %>
+
+<% if paginate %>
+<ul class="actions pagination">
+
+  <li><%= link_to 'Pagina precedente', prev_page ,:class => 'button big previous' + (if prev_page then "" else " disabled" end)%></li>
+<li><%= link_to 'Pagina successiva', next_page , :class => 'button big next'+ (if next_page then "" else " disabled" end)%></li>
+<% if paginate && num_pages > 1 %>
+  <li><%= page_number %>/<%= num_pages %></li>
+<% end %>
+</ul>
+
+<% end %>

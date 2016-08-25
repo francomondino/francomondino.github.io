@@ -1,0 +1,162 @@
+
+
+
+
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<html>
+	<head>
+		<title>Camino del Norte 2016</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <%= stylesheet_link_tag :main %>
+
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="http://www.francomondino.com">Franco Mondino</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="#">Camino del Norte 2016</a></li>
+							</ul>
+						</nav>
+
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+
+
+
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+            <%= yield %>
+
+            <!-- Pagination -->
+
+					</div>
+
+				<!-- Sidebar -->
+					<section id="sidebar">
+
+						<!-- Intro -->
+							<section id="intro">
+
+								<header>
+									<h2>Camino del Norte</h2>
+									<p>DAL LAGO DI GARDA ALLA COSTA ATLANTICA SPAGNOLA</p>
+									<p>LUGLIO – AGOSTO 2016</p>
+								</header>
+							</section>
+
+						<!-- Mini Posts -->
+
+							<section>
+								<div class="mini-posts">
+
+                  <%
+                  n = 3
+                  page_articles.take(n).each_with_index do |article, i|
+
+
+                  %>
+                  <!-- Post -->
+                  <article class="mini-post">
+                    <header>
+                      <h3><%= link_to article.title, article %></h3>
+                      <time class="published" datetime="<%=article.date%>"><%=I18n.localize(article.date, :format => "%-d %B %Y")%></time>
+
+                        <a href="#" class="author"><img src="http://francomondino.com/images/avatar.jpg" alt="" /></a>
+
+                    </header>
+                    <%= link_to (image_tag article.data.image, :class =>"image"), article %>
+
+
+                  </article>
+
+
+                  <% end %>
+									<!-- Mini Post -->
+
+
+
+
+								</div>
+							</section>
+
+						<!-- Posts List -->
+            <% if page_articles.count > n %>
+							<section>
+								<ul class="posts">
+                  <% page_articles.drop(n).each_with_index do |article, i| %>
+
+									<li>
+										<article>
+											<header>
+                        <h3><%= link_to article.title, article %></h3>
+                        <time class="published" datetime="<%=article.date%>"><%=I18n.localize(article.date, :format => "%-d %B %Y")%></time>
+											</header>
+                      <%= link_to (image_tag article.data.image, :class =>"image"), article %>
+										</article>
+									</li>
+                  <% end %>
+								</ul>
+							</section>
+<% end %>
+						<!-- About -->
+							<section class="blurb">
+								<h2>About</h2>
+								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod amet placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at phasellus sed ultricies.</p>
+								<ul class="actions">
+									<li><a href="#" class="button">Learn More</a></li>
+								</ul>
+							</section>
+
+						<!-- Footer -->
+							<section id="footer">
+								<ul class="icons">
+									<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
+									<li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+								<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
+							</section>
+
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+        <%= javascript_include_tag :jquery %>
+
+                <%= javascript_include_tag :skel %>
+                <%= javascript_include_tag :util %>
+                <%= javascript_include_tag :main %>
+	</body>
+</html>
